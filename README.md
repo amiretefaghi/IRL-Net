@@ -25,7 +25,7 @@ cd IRL-Net-master/Implementation
 
 Dataset
 ---------------------------------
-We prepared the training and test data by exploiting [Places2](http://places2.csail.mit.edu/download.html) and [CelebA](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) datasets. We used three different deep inpainting approaches, approaches including [GC](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9010689), [CA](https://openaccess.thecvf.com/content_cvpr_2018/papers/Yu_Generative_Image_Inpainting_CVPR_2018_paper.pdf), and [EC](https://arxiv.org/abs/1901.00212) to generate inpainted images on the two mentioned datasets. For each of the two mentioned datasets, we randomly selected (without replacement) 50K and 10K images to create training and test subsets, respectively. For inpainting images, mask generation is an important factor. To simulate more diverse and complex real-world scenarios, we utilize the irregular mask setting in [GC](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9010689) with arbitrary shapes and random locations for both training and testing. Hence, our generated datasets contain tuples of the inpainted image and generated mask.
+We prepared the training and test data by exploiting [Places2](http://places2.csail.mit.edu/download.html) and [CelebA](https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) datasets. We used three different deep inpainting approaches, approaches including [GC](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9010689), [CA](https://openaccess.thecvf.com/content_cvpr_2018/papers/Yu_Generative_Image_Inpainting_CVPR_2018_paper.pdf), and [EC](https://arxiv.org/abs/1901.00212) to generate inpainted images on the two mentioned datasets. For each of the two mentioned datasets, we randomly selected (without replacement) 50K and 10K images to create training and test subsets, respectively. For inpainting images, mask generation is an important factor. To simulate more diverse and complex real-world scenarios, we utilize the irregular mask setting in [GC](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=9010689) with arbitrary shapes and random locations for both training and testing. Hence, our generated [datasets](https://drive.google.com/drive/folders/1JDSlTmPV38Zk5uiPutJ6SX8o_Z5lCwBk?usp=sharing) contain tuples of the inpainted image and generated mask.
 
 Getting Started
 --------------------------
@@ -35,7 +35,7 @@ To use the pre-trained models, download them from the following links then copy 
 ### 0.Quick Testing
 To hold a quick-testing of our inpaint model, download our pre-trained models of CelebA-HQ and put them into `./example`, then run:
 ```
-python3 test.py --pretrained_path ./pretrained_path --test_path ./example
+python test.py --test_images_path "../datasets/GC_Places/test/inpainted/" --test_masks_path "../datasets/GC_Places/test/mask/" --model_weights_path "./Weights/Places_GC.h5"
 ```
 and check the results in `./example/results`.
 
@@ -46,8 +46,7 @@ python train.py --batch_size 4 \
                 --train_images_path './train/inpainted \
                 --train_masks_path './train/mask \
                 --val_images_path './val/inpainted \
-                --val_masks_path './val/mask \
-                --save_path /path/to/save \
+                --val_masks_path './val/mask 
 ``` 
 
 
