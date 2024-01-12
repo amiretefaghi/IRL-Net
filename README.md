@@ -29,7 +29,7 @@ We prepared the training and test data by exploiting [Places2](http://places2.cs
 
 Getting Started
 --------------------------
-To use the pre-trained models, download them from the following links then copy them to corresponding checkpoints folder.
+To use the pre-trained models, download them from the following [link](https://drive.google.com/drive/folders/1jjGXqzdjdPft355aAPWQZWxlKd_jr5Hj?usp=sharing) then copy them to corresponding checkpoints folder.
 
 
 ### 0.Quick Testing
