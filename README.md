@@ -19,7 +19,7 @@ Installation
 * Clone this repo:
 ```
 git clone https://github.com/amiretefaghi/IRL-Net
-cd IRL-Net-master
+cd IRL-Net-master/Implementation
 ```
 * Install Tensorflow
 
